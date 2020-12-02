@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
+  <link rel="stylesheet" href="css/style.css" />
+  <head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop</title>
+    <!-- <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      canvas {
+        background: #eee;
+        display: block;
+        margin: 0 auto;
+      }
+    </style> -->
+  </head>
+  <body>
+    <canvas class="general" id="myCanvas" width="480" height="320"></canvas>
+
+    <!-- <script>
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+      ctx.beginPath(); /*Метод CanvasRenderingContext2D.beginPath() Canvas 2D API запускает новый путь, опуская список подпутей. Вызовите этот метод, когда хотите создать новый путь*/
+      ctx.rect(
+        20,
+        40,
+        50,
+        50,
+      ); /*первые два параметра определяют координаты верхнего левого угла прямоугольника на canvas, в то время, как два других параметра определяют ширину и высоту прямоугольника.*/
+      ctx.fillStyle = '#FF0000';
+      /*Свойство fillStyle хранит цвет, который будет использован методом fill() для отрисовки нашего квадрата.*/
+      ctx.fill();
+      ctx.closePath();
+      /*метод из Canvas 2D API, добавляет в путь линию от текущей до первоначальной точки под пути и закрывает сам путь (давая возможность инициализировать новый). Если путь пустой или содержит одну точку, этот метод ничего не делает. Сама функция ничего не рисует. Он лишь позволяет отрисовывать путь таким методам, как stroke() и fill().*/
+
+      /*часть кода для отрисовки зелёного круга.*/
+      ctx.beginPath();
+      ctx.arc(
+        240,
+        160,
+        20,
+        0,
+        Math.PI * 2,
+        false,
+      ); /*метод arc(). Он принимает шесть параметров: x и y координаты центра круга; радиус; начальный и конечный угол отрисовки круга (в радианах) направление отрисовки: (false - по часовой стрелке, по умолчанию, или true - против часовой стрелки). Последний параметр не обязательный.*/
+      ctx.fillStyle = 'green';
+      ctx.fill();
+      ctx.closePath();
+
+      ctx.beginPath();
+      ctx.rect(160, 10, 100, 40);
+      ctx.strokeStyle = 'rgba(0, 0, 255, 0.5)';
+      ctx.stroke(); /*Вместо fill() и заполнения фигур цветом, можно использовать stroke(), чтобы окрасить только внешнюю обводку фигуры. */
+      ctx.closePath();
+    </script> -->
+  </body>
+  <script src="js/modal.js" type="module"></script>
+</html>

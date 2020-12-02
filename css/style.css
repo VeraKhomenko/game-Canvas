@@ -1,0 +1,14 @@
+/* основныe свойства */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.general {
+  background: #eee;
+  display: block;
+  margin: 0 auto;
+  /* width: 480px;
+  height: 320px; */
+}
