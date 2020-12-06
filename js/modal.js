@@ -15,16 +15,14 @@ let leftPressed = false;
 let brickRowCount = 3; //определили количество строк
 let brickColumnCount = 12; // столбцов кирпичей
 let brickWidth = 75; // их ширину
-let brickHeight = 20; // и высоту
+let brickHeight = 25; // и высоту
 let brickPadding = 10; //прокладку между кирпичами
 let brickOffsetTop = 25; //верхнее и
 let brickOffsetLeft = 25; //левое смещение
 let score = 0;
-
-let bricks = [];
-
 let lives = 3;
 
+let bricks = [];
 for (let c = 0; c < brickColumnCount; c++) {
   bricks[c] = [];
   for (let r = 0; r < brickRowCount; r++) {
@@ -80,13 +78,18 @@ function collisionDetection() {
       let b = bricks[c][r];
       if (b.status == 1) {
         // удары об блоки
-        if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+        if (
+          x - ballRadius > b.x &&
+          x - ballRadius < b.x + brickWidth &&
+          y - ballRadius > b.y &&
+          y - ballRadius < b.y + brickHeight
+        ) {
           dy = -dy;
           b.status = 0; // удары об блоки
           score++;
           // score += 2; // начислять баллы каждый раз при ударе кирпича
           if (score == brickRowCount * brickColumnCount) {
-            alert(`'YOU WIN, CONGRATULATIONS! score: ${score}'`); // отобразить сообщение о победе (выводить набранные очки)
+            alert(`'YOU WIN, CONGRATS! score: ${score}'`); // отобразить сообщение о победе (выводить набранные очки)
             document.location.reload();
           }
         }
@@ -164,8 +167,8 @@ function draw() {
     // если касание нижней стенки то проверяем платформу
     if (x > paddleX && x < paddleX + paddleWidth) {
       // если на платформе
-      dy = -dy; // если на платформе меняем направление
-      // dy = -2 * dy; // ускорение
+      //dy = -dy; // если на платформе меняем направление
+      dy = -1.05 * dy; //  если на платформе меняем направление + ускорение
     } else {
       // alert('GAME OVER');
       // document.location.reload();
